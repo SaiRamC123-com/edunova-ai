@@ -5,7 +5,7 @@ import Hero from "./components/Hero";
 import Features from "./components/Features";
 
 import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/dashboard";
 import PDFUpload from "./components/PDFUpload";
 import QuizGenerator from "./components/QuizGenerator";
 import AIChat from "./components/AIChat";

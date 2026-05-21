@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #0f172a;
+  color: white;
+  font-family: Inter, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  background: rgba(6,182,212,0.15);
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  top: 20%;
+  left: 20%;
+  z-index: -1;
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    #020617,
+    #081028,
+    #020617
+  );
+  background-size: 400% 400%;
+  animation: bgMove 15s ease infinite;
+}
+
+@keyframes bgMove {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ─── LIGHT MODE ─── */
+html:not(.dark) body {
+  background: linear-gradient(135deg, #d7dbe3, #7790bb, #292f3e) !important;
+  background-size: 400% 400% !important;
+  animation: bgMove 15s ease infinite !important;
+  color: #0f172a !important;
+}
+
+html:not(.dark) body::before {
+  background: rgba(83, 40, 158, 0.08) !important;
+}
+
+html:not(.dark) .min-h-screen,
+html:not(.dark) .h-screen {
+  background: transparent !important;
+}
+
+html:not(.dark) .text-white {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .text-gray-400,
+html:not(.dark) .text-gray-500 {
+  color: #64748b !important;
+}
+
+html:not(.dark) .text-gray-300 {
+  color: #475569 !important;
+}
+
+/* Light mode cards */
+html:not(.dark) [style*="rgba(255,255,255,0.03)"],
+html:not(.dark) [style*="rgba(255,255,255,0.04)"] {
+  background: rgba(255,255,255,0.85) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+}
+
+/* Light mode inputs */
+html:not(.dark) input,
+html:not(.dark) textarea {
+  background: rgba(255,255,255,0.9) !important;
+  border-color: rgba(0,0,0,0.12) !important;
+  color: #0f172a !important;
+}
+
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Light mode headers/navbar */
+html:not(.dark) [style*="rgba(2,0,8"] {
+  background: rgba(255,255,255,0.85) !important;
+}
+
+/* Smooth transitions */
+*, body, html {
+  transition: background-color 0.3s ease, color 0.2s ease, border-color 0.2s ease;
+}

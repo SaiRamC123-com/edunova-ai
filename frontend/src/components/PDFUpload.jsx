@@ -8,7 +8,7 @@ import { FileText, Upload, Sparkles, Zap } from "lucide-react";
 const extractTextFromPDF = async (file) => {
   const formData = new FormData();
   formData.append("pdf", file);
-  const response = await fetch("http://localhost:3001/api/extract-pdf", {
+  const response = await fetch("https://edunova-ai-8r0m.onrender.com/api/extract-pdf", {
     method: "POST",
     body: formData,
   });
@@ -27,7 +27,7 @@ const PDFUpload = () => {
     toast.loading("Analyzing PDF...", { id: "pdf" });
     try {
       const extractedText = await extractTextFromPDF(file);
-      const response = await fetch("http://localhost:3001/api/chat", {
+      const response = await fetch("https://edunova-ai-8r0m.onrender.com/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

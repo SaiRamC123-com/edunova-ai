@@ -38,7 +38,7 @@ const NotesGenerator = () => {
     setLoading(true);
     toast.loading("Generating notes...", { id: "notes" });
     try {
-      const response = await fetch("http://localhost:3001/api/chat", {
+      const response = await fetch("https://edunova-ai-8r0m.onrender.com/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
